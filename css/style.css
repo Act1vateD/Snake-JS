@@ -6,6 +6,29 @@ body {
   margin: 300px;
 }
 
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 300px;
+}
+
+th {
+  text-align: center;
+  height: 30px;
+  font-size: 30px;
+}
+
+td {
+  text-align: center;
+  font-size: 20px;
+  height: 30px;
+}
+
 .field {
   width: 750px;
   height: 750px;

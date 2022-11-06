@@ -58,6 +58,8 @@ function createMouse (){
     mouse.classList.add('mouse');
 }
 
+
+
 createMouse();
 let direction = 'right';
 let steps = false;
@@ -73,6 +75,12 @@ display: block;
 
 let score = 0;
 input.value = `Ваши очки: ${score}`;
+
+var tbody = document.getElementById('tab1');
+var row = document.createElement("TR");
+    tbody.appendChild(row);
+    var td1 = document.createElement("TD");
+    row.appendChild(td1);
 
 
 function move (){
@@ -117,17 +125,23 @@ function move (){
         createMouse();
         score++;
         input.value = `Ваши очки: ${score}`;
+        localStorage.setItem('name', score);
+        
+       
+        
 
     }
 
     if (snakeBody[0].classList.contains('snakeBody')){
 setTimeout(() => {
     alert(`Game Over!        Ваши очки: ${score}`);
+    td1.innerHTML = localStorage.getItem('name');
+    
 }, 200);
 
 
         clearInterval(interval);
-        nakeBody[0].style.background = 'url(gameover.jpg) center no-repeat';
+        snakeBody[0].style.background = 'url(gameover.jpg) center no-repeat';
         snakeBody[0].style.backgroundSize = "cover";
     }
    
